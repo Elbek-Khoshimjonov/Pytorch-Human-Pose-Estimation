@@ -1,8 +1,8 @@
-model = StackedHourGlass
+model = PoseAttention
 TargetType: heatmap
 outputRes: 64
 
-### StackedHourGlass
+### PoseAttention
 nChannels: 256
 nStack: 2
 nModules: 2
@@ -25,3 +25,4 @@ dropMag: 0.1
 
 valInterval: 4
 saveInterval: 8
+

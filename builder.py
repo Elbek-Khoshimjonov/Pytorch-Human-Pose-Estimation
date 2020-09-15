@@ -25,7 +25,7 @@ class Builder(object):
 		elif self.opts.model == 'PyraNet':
 			Model = ModelBuilder(self.opts.nChannels, self.opts.nStack, self.opts.nModules, self.opts.nReductions, self.opts.baseWidth, self.opts.cardinality, self.opts.nJoints, self.opts.inputRes)
 		elif self.opts.model == 'PoseAttention':
-			Model = ModelBuilder(self.opts.nChannels, self.opts.nStack, self.opts.nModules, self.opts.nReductions, self.opts.nJoints, self.LRNSize, self.opts.IterSize)
+			Model = ModelBuilder(self.opts.nChannels, self.opts.nStack, self.opts.nModules, self.opts.nReductions, self.opts.nJoints, self.opts.LRNSize, self.opts.IterSize)
 		else:
 			assert('Not Implemented Yet!!!')
 		if self.states is not None:
