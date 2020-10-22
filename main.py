@@ -1,3 +1,6 @@
+from os import environ
+environ["CUDA_VISIBLE_DEVICES"] = "0,1"
+
 import torch
 import builder
 import trainer
@@ -20,7 +23,10 @@ TrainDataLoader, ValDataLoader = Builder.DataLoaders()
 Epoch = Builder.Epoch()
 
 
-Model = Model.to(opts.gpuid)
+# gpus = [ int(id) for id in opts.gpuid.split(",")]
+
+Model = torch.nn.DataParallel(Model.cuda())
+
 
 # opts.saveDir = os.path.join(opts.saveDir, os.path.join(opts.model, 'logs_{}'.format(datetime.datetime.now().isoformat())))
 File = os.path.join(opts.saveDir, 'log.txt')

@@ -83,7 +83,7 @@ class opts():
 		self.parser.add('--valInterval', type=int, help='After how many train epoch to run a val epoch')
 		self.parser.add('--saveInterval', type=int, help='After how many train epochs to save model')
 
-		self.parser.add('--gpuid', type=int, help='GPU ID for the model')
+		self.parser.add('--gpuid', type=str, help='GPU ID for the model')
 		self.parser.add('--nEpochs', type=int, help='Number of epochs to train')
 
 		self.parser.add('--optimizer_type', help='Which optimizer to use in DataLoader')

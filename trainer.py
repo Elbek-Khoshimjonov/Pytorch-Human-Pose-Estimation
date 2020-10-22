@@ -71,12 +71,12 @@ class Trainer(object):
                 bar = Bar('==>', max=nIters)
 
                 for batch_idx, (data, target, meta1, meta2) in enumerate(dataloader):
-                        model = self.model.to(self.gpu)
-                        data = data.to(self.gpu, non_blocking=True).float()
-                        target = target.to(self.gpu, non_blocking=True).float()
+                        model = self.model
+                        data = data.float().cuda()
+                        target = target.float().cuda()
                         output = model(data)
 
-                        loss = self.Loss(output, target, meta1.to(self.gpu, non_blocking=True).float().unsqueeze(-1))
+                        loss = self.Loss(output, target, meta1.float().cuda().unsqueeze(-1))
                         self.loss.update(loss.item(), data.shape[0])
 
                         self._eval_metrics(output, target, meta1, meta2, data.shape[0])

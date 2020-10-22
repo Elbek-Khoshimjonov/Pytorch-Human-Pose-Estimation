@@ -20,5 +20,5 @@ shuffle: 1
 
 nThreads: 4
 
-gpuid: 1
+gpuid: 0, 1
 nEpochs: 200

@@ -11,7 +11,7 @@ LRNSize : 1
 IterSize : 3
 
 ###
-data_loader_size = 6
+data_loader_size = 32
 #
 #
 #loadModel = ../../trainedModels/simpleHG.pth
